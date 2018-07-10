@@ -33,7 +33,7 @@
       .expect({{responseCode}})
       {{/if}}
       .end(function(err, res) {
-        if (err) return done(err);
+        if (err) return done(fail(err));
 
         {{#validateResponse returnType noSchema}}
         {{#is assertion 'expect'}}
@@ -113,7 +113,7 @@
         printReport: true, // true or false
         printSteps: true, // true or false
         callback: function(error, report) {
-          if (error) return done(error);
+          if (error) return done(fail(error));
 
           {{#is assertion 'expect'}}
           expect(report.successfulResponses.length).

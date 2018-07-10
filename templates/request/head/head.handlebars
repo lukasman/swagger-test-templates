@@ -23,7 +23,7 @@
         }
       },
       function(error, res) {
-        if (error) return done(error);
+        if (error) return done(fail(error));
 
         {{#is assertion 'expect'}}
         {{#if default}}

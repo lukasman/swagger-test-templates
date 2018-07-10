@@ -55,7 +55,7 @@
       },
         {{/is}}
       function(error, res, body) {
-        if (error) return done(error);
+        if (error) return done(fail(error));
 
         {{#is assertion 'expect'}}
         {{#if default}}
@@ -173,7 +173,7 @@
         printReport: true, // true or false
         printSteps: true, // true or false
         callback: function(error, report) {
-          if (error) return done(error);
+          if (error) return done(fail(error));
 
           {{#is assertion 'expect'}}
           expect(report.successfulResponses.length).
